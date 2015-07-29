@@ -1,0 +1,28 @@
+﻿<div class="navbar-container" id="navbar-container">
+    <div class="navbar-header pull-left">
+        <a href="~/Home/ShopIndex" class="navbar-brand">
+            <small>
+                Shop Online
+            </small>
+        </a><!-- /.brand -->
+    </div><!-- /.navbar-header -->
+
+    <div class="navbar-header pull-right" role="navigation">
+        <ul class="nav ace-nav">
+            <li class="light-blue">
+                @if (new ShopOnline.Filters.UserSession().isUserLogin() == false)
+                {
+                    <a href="~/Login/Index" style="float: left; margin-right: 5px">Sign In</a>
+                    <a href="~/Register/Index" style="float: left">Sign Up</a>
+                }
+                else
+                {
+                  <a href="~/Login/Logout" style="float: left">Log Out</a>
+                }
+
+
+
+            </li>
+        </ul><!-- /.ace-nav -->
+    </div><!-- /.navbar-header -->
+</div><!-- /.container -->

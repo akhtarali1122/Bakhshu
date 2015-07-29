@@ -1,0 +1,319 @@
+﻿@{
+    ViewBag.Title = "Update Shop";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@{
+    ShopOnline.Models.User shopObj = null;
+    if (ViewData.Model != null)
+    {
+        shopObj = (ShopOnline.Models.User)ViewData.Model;
+    }
+
+    if (shopObj == null)
+    {
+        shopObj = new ShopOnline.Models.User();
+    }
+    string userId = shopObj.UserId.ToString();
+}
+@*<link rel="stylesheet" href="http://cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">*@
+<script src="http://formValidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="http://formValidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+<script src="~/Scripts/SiteJs/ShopUpdateValidation.js"></script>
+<script src="~/Scripts/SiteJs/UpdateShopInfo.js"></script>
+<script src="~/Content/AdminContents/js/ckeditor/ckeditor.js"></script>
+
+<style>
+    .bgColorYellow {
+        font-weight: bold;
+        padding: 3px;
+    }
+
+    .profile-contact-links {
+        border: solid 1px #FBD76B;
+        background-color: transparent !important;
+    }
+</style>
+
+
+<div class="page-header">
+    <div class="pageTitle">Update Shop Profile</div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+
+        <div>
+            <div id="user-profile-1" class="user-profile row">
+                <div class="col-xs-12 col-sm-3 center">
+                    <div>
+                        <form id="frmUserAvatar" name="frmUserAvatar" method="post" enctype="multipart/form-data" action="~/">
+                            <div class="profile-picture">
+                                <div class="profileUploaderBox">
+
+                                    <input class="fileProfile" type="file" id="UpdateShopAvatar" name="UpdateShopAvatar" style="opacity:0" />
+                                </div>
+                                <div class="profilePhotoBox">
+                                    @{
+                                        string avatarPath = "BlankImage.jpg";
+                                        if (!string.IsNullOrWhiteSpace(shopObj.ShopPhoto))
+                                        {
+                                            avatarPath = shopObj.ShopPhoto;
+                                        }
+                                    }
+                                    <img class="img-rounded" title="@shopObj.ShopName" alt="@shopObj.ShopName" src="~/UploadedImagesThumbnails_Shop/@avatarPath" />
+
+                                </div>
+
+                            </div>
+
+                            @{
+                                string SHOP_ID = new ShopOnline.Common.SecurityManager().EncodeString(Convert.ToString(shopObj.UserId));
+                            }
+                            <input type="hidden" id="UserId" name="UserId" value="@SHOP_ID" />
+                        </form>
+
+                        <div class="space-4"></div>
+
+                        <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                            <div class="inline position-relative">
+                                <span class="user-title-label">
+                                    <span class="white">@shopObj.ShopName</span>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="space-6"></div>
+
+                        <div class="profile-contact-info">
+
+                            <div class="profile-contact-links align-left">
+
+                                <table>
+                                    <tr>
+                                        <td class="bgColorYellow">Shop Name</td>
+                                        <td style="padding-left:10px">@shopObj.ShopName</td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="col-xs-12 col-sm-9">
+
+
+                    @Html.Partial("OperationMessage")
+
+                    <div class="profile-user-info parentBoxForm" id="ShopInfoViewMode">
+
+
+                        <button class="btn btn-app btn-yellow btn-xs childBoxFormEditButton" id="btnEditShopProfile">
+                            <i class="icon-edit biggerr-160"></i>
+                            Edit
+                        </button>
+                        <div class="profile-info-row">
+                            <div class="leftLabelBlack"> Shop Name </div>
+
+                            <div class="profile-info-value">
+                                <span class="editable">@shopObj.ShopName&nbsp;</span>
+                            </div>
+                        </div>
+                        <div class="profile-info-row">
+                            <div class="leftLabelBlack"> Shop Country</div>
+
+                            <div class="profile-info-value">
+                                <span class="editable">@shopObj.ShopCountry&nbsp;</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                            <div class="leftLabelBlack"> Shop City </div>
+
+                            <div class="profile-info-value">
+                                <span class="editable">@shopObj.ShopCity&nbsp;</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                            <div class="leftLabelBlack"> Shop Addres</div>
+
+                            <div class="profile-info-value">
+                                <span class="editable">@shopObj.ShopAddress&nbsp;</span>
+                            </div>
+                        </div>
+
+                        <div class="profile-info-row">
+                            <div class="leftLabelBlack"> Map Url </div>
+
+                            <div class="profile-info-value">
+                                <span class="editable"><a href="@shopObj.ShopMapUrl" target="_blank">Watch on World Map</a>&nbsp;</span>
+                            </div>
+                        </div>
+                        
+
+                        <div class="profile-info-row">
+                            <div class="leftLabelBlack">Description </div>
+                            <div class="profile-info-value">
+                                <span class="editable">@Html.Raw(shopObj.ShopDescription)&nbsp;</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-user-info" id="ShopInfoEditMode" style="display:none">
+
+                        <form class="form-horizontal" id="frmProfileInfo" name="frmProfileInfo" action="~/UpdateProfiles/UpdateShopInfo" method="post">
+
+                            <input type="hidden" value="@shopObj.UserId" id="userId" name="userId" />
+
+                            <div class="form-group">
+                                <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">Shop Name</label>
+
+                                <div class="col-xs-10 col-sm-10 col-md-10">
+                                    <input type="text" id="txtShopName" name="txtShopName" placeholder="Shop Name" class="form-control" value="@shopObj.ShopName " />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">Shop Country</label>
+
+                                <div class="col-xs-10 col-sm-10 col-md-10">
+                                    <input type="text" id="txtShopCountry" name="txtShopCountry" placeholder="Shop Country" class="form-control" value="@shopObj.ShopCountry " />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">Shop City</label>
+
+                                <div class="col-xs-10 col-sm-10 col-md-10">
+                                    <input type="text" id="txtShopCity" name="txtShopCity" placeholder="Shop City" class="form-control" value="@shopObj.ShopCity " />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">Shop Address</label>
+                                <div class="col-xs-10 col-sm-10 col-md-10">
+                                    <input type="text" id="txtShopAddress" name="txtShopAddress" placeholder="Cell Number" class="form-control" value="@shopObj.ShopAddress " />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">Map Url</label>
+
+                                <div class="col-xs-10 col-sm-10 col-md-10">
+                                    <input type="text" id="txtMapUrl" name="txtMapUrl" placeholder="Map Url" class="form-control" value="@shopObj.ShopMapUrl" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">Shop Description</label>
+
+                                <div class="col-xs-10 col-sm-10 col-md-10">
+                                    <textarea rows="8" class="ckeditor" placeholder="Shop Description" id="txtShopDescription" name="txtShopDescription" maxlength="1950" required="required">@Html.Raw(shopObj.ShopDescription)</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">&nbsp;</label>
+                                <div class="col-xs-10 col-sm-10 col-md-10">
+                                    <button class="btn btn-primary btn-sm" type="submit" id="btnUpdateShopInfo">
+                                        <i class="icon-ok bigger-110"></i>
+                                        Save
+                                    </button>
+                                    &nbsp;
+                                    <button class="btn btn-info btn-sm" type="button" id="btnCancelShopInfo">
+                                        <i class="icon-reply align-top bigger-125"></i>
+                                        Cancel
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                        </form>
+
+
+
+                    </div>
+                    <div class="space-20"></div>
+
+                    @*<div class="row">
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <form id="frmStatus" name="frmStatus" method="post" action="~/">
+                                    <select id="selStatus" name="selStatus" class="form-control">
+                                        <option value=""> - - Select - -</option>
+                                        <option value="1">Active</option>
+                                        <option value="2">In-Active</option>
+                                        <option value="3">Suspended</option>
+                                        <option value="4">Blocked</option>
+                                    </select>
+                                    <input type="hidden" id="hidUserId" name="hidUserId" value="@ViewData["user_Id"]" />
+                                </form>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-md-3">
+                                <button type="button" id="btnChangeUserStatus" name="btnChangeUserStatus" class="btn btn-sm btn-success" style="float:left">
+                                    Change Status
+                                    <i class="icon-arrow-right icon-on-right bigger-110"></i>
+                                </button>
+                            </div>
+                        </div>*@
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PAGE CONTENT ENDS -->
+    </div><!-- /.col -->
+</div>
+
+
+
+@*<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<!-- <![endif]-->
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+
+
+    jQuery(document).ready(function ($) {
+
+        var siteBaseUrl = document.getElementById("frmSiteUrl").action;
+
+
+        $("#txtLoginName").blur(function () {
+
+            $("#retResult").get()[0].innerHTML = "<img src='" + siteBaseUrl + "Content/AdminContents/img/ajax-loader.gif' alt='loader' />";
+            $.ajax({
+                type: "GET",
+                url: siteBaseUrl + "UpdateProfiles/CheckUserAvailability?txtLoginName=" + document.getElementById("txtLoginName").value,
+                success: function (response) {
+                    if (response == "1") {
+                        showElement('retResult');
+                        $("#retResult").get()[0].innerHTML = "<span style='color:Green'>Login Name Available</span>";
+                    }
+                    else if (response == "2") {
+                        hideElement('retResult');
+                    }
+                    else {
+                        showElement('retResult');
+                        $("#retResult").get()[0].innerHTML = "<span style='color:Red'>Sorry Login Name Not Available</span>";
+                    }
+                },
+                error: function (ex) {
+                }
+            });
+
+
+
+        });
+
+    });
+</script>*@

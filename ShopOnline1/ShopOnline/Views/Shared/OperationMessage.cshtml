@@ -1,0 +1,54 @@
+﻿@using ShopOnline.Common
+@using ShopOnline.Models
+
+@{
+    if (ViewData[Constants.OPERATIONALMESSAGE] != null)
+    {
+        <div id="responseMessage">
+            @{
+        OperationMessageEntity Message = (OperationMessageEntity)ViewData[Constants.OPERATIONALMESSAGE];
+        if (Message.MessageType == Convert.ToInt32(OperationMessageType.Error))
+        {
+
+
+            <div class="alert alert-danger alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button"><i class="fa fa-times"></i></button>
+                <strong>@Message.MessageTitle!</strong> @Message.MessageText
+            </div>
+
+
+        }
+        else if (Message.MessageType == Convert.ToInt32(OperationMessageType.Information))
+        {
+
+            <div class="alert alert-info alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button"><i class="fa fa-times"></i></button>
+                <strong>@Message.MessageTitle!</strong> @Message.MessageText
+            </div>
+
+
+        }
+        else if (Message.MessageType == Convert.ToInt32(OperationMessageType.Notics))
+        {
+
+            <div class="alert alert-info alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button"><i class="fa fa-times"></i></button>
+                <strong>@Message.MessageTitle!</strong> @Message.MessageText
+            </div>
+
+        }
+        else if (Message.MessageType == Convert.ToInt32(OperationMessageType.Success))
+        {
+
+            <div class="alert alert-success alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button"><i class="fa fa-times"></i></button>
+                <strong>@Message.MessageTitle!</strong> @Message.MessageText
+            </div>
+
+
+        }
+            }
+        </div>
+    }
+
+}

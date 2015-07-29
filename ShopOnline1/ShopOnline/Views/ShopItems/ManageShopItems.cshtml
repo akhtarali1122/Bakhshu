@@ -1,0 +1,143 @@
+﻿@{
+    ViewBag.Title = "Manage Shop Items";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<style>
+    .dataTables_wrapper .row:first-child {
+        display: none;
+    }
+
+    .dataTables_wrapper .row:last-child {
+        display: none;
+    }
+</style>
+
+@{
+    List<ShopOnline.Models.Shop_Item> ItemList = null;
+    if (ViewData.Model != null)
+    {
+        ItemList = (List<ShopOnline.Models.Shop_Item>)ViewData.Model;
+    }
+
+}
+
+<script src="~/Content/AdminContents/js/jquery.dataTables.min.js"></script>
+<script src="~/Content/AdminContents/js/jquery.dataTables.bootstrap.js"></script>
+<script src="~/Content/AdminContents/js/bootbox.min.js"></script>
+<script src="~/Scripts/SiteJs/ShopItems.js"></script>
+
+<div class="page-header">
+    <div class="pageTitle">Manage Shop Items</div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+
+        @Html.Partial("OperationMessage")
+
+        <div style="text-align:left;clear:both;">
+            <a href="javascript:hideElement('lnkShowFilter');showElement('filterBox');showElement('lnkHideFilter');" id="lnkShowFilter" style="text-decoration:underline">Show Filter</a>
+            <a href="javascript:hideElement('lnkHideFilter');hideElement('filterBox');showElement('lnkShowFilter');" id="lnkHideFilter" style="display:none;text-decoration:underline">Hide Filter</a>
+        </div>
+
+
+        <div id="filterBox" style="border:dashed 2px #ccc;margin-bottom:10px;clear:both;height:75px;display:none">
+            <div class="col-xs-2 col-sm-1 col-md-2 col-lg-2">
+                <div>
+                    <label>Name</label>
+                </div>
+                <div>
+                    <input type="text" id="txtName" name="txtName" class="form-control" />
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-1 col-md-2 col-lg-2">
+                <div>
+                    <label>Company</label>
+                </div>
+                <div>
+                    <input type="text" id="txtCompany" name="txtCompany" class="form-control" />
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3">
+                <div>
+                    <label>Brand</label>
+                </div>
+                <div>
+                    <input type="text" id="txtBrand" name="txtBrand" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="table-responsive" style="clear:both">
+            <table id="ebizlineTreeTable" class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-xs-2 col-sm-1 col-md-2 col-lg-2">Name</th>
+                        <th class="col-xs-2 col-sm-1 col-md-2 col-lg-2">Company</th>
+                        <th class="col-xs-2 col-sm-2 col-md-3 col-lg-3">Brand</th>
+                        <th class="col-xs-2 col-sm-1 col-md-2 col-lg-2">Price</th>
+                        <th class="col-xs-2 col-sm-2 col-md-1 col-lg-1">Active</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (ItemList != null && ItemList.Count() > 0)
+                    {
+                        foreach (ShopOnline.Models.Shop_Item ItemObj in ItemList)
+                        {
+                            string Item_ID = new ShopOnline.Common.SecurityManager().EncodeString(ItemObj.ItemId.ToString());
+                            <tr>
+                                <td>@ItemObj.ItemName</td>
+                                <td>@ItemObj.ItemCompany</td>
+                                <td>@ItemObj.ItemBrand</td>
+                                <td>@ItemObj.ItemPrice</td>
+                                <td>
+                                    @if (ItemObj.IsActive != null && ItemObj.IsActive.Equals(true))
+                                    {
+                                        <input type="checkbox" id="chkActive" name="chkActive" value="1" checked="checked" />
+                                    }
+                                    else
+                                    {
+                                        <input type="checkbox" id="chkActive" name="chkActive" value="1" />
+                                    }
+
+                                </td>
+                                <td>
+                                    <div class="visible-md visible-lg visible-sm visible-xs action-buttons">
+
+                                        <a href="#" class="tooltip-info" data-rel="tooltip" style="margin-left:20px" title="Edit" id="@("lnkEdit" + ItemObj.ItemId)">
+                                            <span class="red">
+                                                <i class="icon-edit"></i>
+                                            </span>
+                                        </a>
+                                        <a class="red" href="#" data-rel="tooltip" style="margin-left:20px" title="Delete" id="@("lnkDelete" + ItemObj.ItemId)">
+                                            <i class="icon-trash bigger-130"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <script type="text/javascript">
+                                $("#@("lnkEdit" + ItemObj.ItemId)").click(function () {
+                                    EditItem('@Item_ID');
+                                });
+                                $("#@("lnkDelete" + ItemObj.ItemId)").click(function () {
+                                    deleteItem('@Item_ID');
+                                });
+
+                            </script>
+
+
+                        }
+                    }
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>

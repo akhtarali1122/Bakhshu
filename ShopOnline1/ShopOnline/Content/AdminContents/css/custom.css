@@ -1,0 +1,128 @@
+.parentBoxForm
+{
+    cursor:pointer;
+}
+.childBoxFormEditButton
+{
+    z-index:900;float:right;
+    margin-top:-20px !important;
+    cursor:pointer;
+ 
+}
+.parentBoxForm:hover .childBoxFormEditButton
+{
+    display:block !important;
+    cursor:pointer;
+}
+.leftLabelBlack
+{
+    bottom: 0;
+    color: #222;
+    font-weight: bold;
+    left: 0;
+    padding: 6px 10px 6px 0;
+    position: absolute;
+    text-align: right;
+    top: 0;
+    width: 110px;
+
+}
+.blackLabel
+{
+    color: #222;
+     font-weight: bold;
+}
+.profilePhotoBox
+{
+    margin-top:-200px;
+    cursor:pointer;
+    z-index:100;
+    text-align:center;
+    position:relative;
+    cursor:pointer;
+    width:200px;
+    height:200px;
+}
+.profileUploaderBox
+{
+    width:200px;
+    height:200px;
+    cursor:pointer;
+    z-index:200;
+    text-align:center;
+    position:relative;
+    cursor:pointer;
+    background-color:#000;
+    opacity:0;
+    background:#000 url('img/ChangeAvatar.png');
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+
+.fileProfile
+{
+    width:200px;height:200px;
+    cursor:pointer;
+}
+
+.profile-picture:hover .profileUploaderBox
+{
+    z-index:200;
+    opacity:0.60;
+}
+.recordViewLabelBlack
+{
+    bottom: 0;
+    color: #222;
+    font-weight: bold;
+    left: 0;
+    padding: 6px 10px 6px 0;
+    position: absolute;
+    text-align: right;
+    top: 0;
+    width: 175px;
+
+}
+.recordViewValue
+{
+    border-bottom: 1px dotted #D5E4F1;
+    margin-left: 180px;
+    padding: 6px 4px 6px 6px;
+}
+
+.viewRecordEditButton
+{
+    float:right;margin-top:-35px !important;
+}
+.btnRemove
+{
+    border:0px;
+    background:Transparent;
+}
+
+.btn
+{
+    border-width: 4px;
+    font-size: 13px;
+    line-height: 1;
+}
+
+
+.Appt_Color_Box
+{
+    width:15px;
+    height:15px;
+}
+.Appt_Available
+{
+    background-color:#8cc63f;
+}
+.Appt_Confirmed
+{
+    background-color:#c1272d;
+}
+.Appt_NotConfirmed
+{
+    background-color:#3a87ad;
+}
+

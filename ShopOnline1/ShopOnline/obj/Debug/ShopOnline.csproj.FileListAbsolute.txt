@@ -1,0 +1,258 @@
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ShopOnline.dll.config
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ShopOnline.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ShopOnline.pdb
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Antlr3.Runtime.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.Core.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\EntityFramework.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Microsoft.Data.Edm.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Microsoft.Data.OData.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Newtonsoft.Json.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Net.Http.Formatting.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Spatial.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Helpers.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Http.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Http.OData.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Http.WebHost.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Mvc.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Optimization.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Razor.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.WebPages.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\WebGrease.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\WebMatrix.Data.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\WebMatrix.WebData.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\EntityFramework.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Newtonsoft.Json.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Net.Http.Formatting.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Helpers.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Http.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Http.WebHost.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Mvc.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Razor.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.WebPages.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\WebMatrix.Data.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\WebMatrix.WebData.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.Core.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Web.Http.OData.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Microsoft.Data.Edm.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\Microsoft.Data.OData.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\System.Spatial.xml
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\de\System.Spatial.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\es\System.Spatial.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\fr\System.Spatial.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\it\System.Spatial.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ja\System.Spatial.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ko\System.Spatial.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\ru\System.Spatial.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\obj\Debug\ShopOnline.dll
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\obj\Debug\ShopOnline.pdb
+C:\Users\Akhtar\Documents\Visual Studio 2013\Projects\ShopOnline\ShopOnline\obj\Debug\ShopOnline.csprojResolveAssemblyReference.cache
+D:\Work\ShopOnline\ShopOnline\bin\ShopOnline.dll.config
+D:\Work\ShopOnline\ShopOnline\bin\ShopOnline.dll
+D:\Work\ShopOnline\ShopOnline\bin\ShopOnline.pdb
+D:\Work\ShopOnline\ShopOnline\bin\Antlr3.Runtime.dll
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.AspNet.dll
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.Core.dll
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OAuth.dll
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OpenId.dll
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Work\ShopOnline\ShopOnline\bin\EntityFramework.dll
+D:\Work\ShopOnline\ShopOnline\bin\Microsoft.Data.Edm.dll
+D:\Work\ShopOnline\ShopOnline\bin\Microsoft.Data.OData.dll
+D:\Work\ShopOnline\ShopOnline\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\ShopOnline\ShopOnline\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Work\ShopOnline\ShopOnline\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Work\ShopOnline\ShopOnline\bin\Newtonsoft.Json.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Net.Http.Formatting.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Spatial.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Helpers.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Http.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Http.OData.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Http.WebHost.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Mvc.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Optimization.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Razor.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.WebPages.dll
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.dll
+D:\Work\ShopOnline\ShopOnline\bin\WebGrease.dll
+D:\Work\ShopOnline\ShopOnline\bin\WebMatrix.Data.dll
+D:\Work\ShopOnline\ShopOnline\bin\WebMatrix.WebData.dll
+D:\Work\ShopOnline\ShopOnline\bin\EntityFramework.xml
+D:\Work\ShopOnline\ShopOnline\bin\Newtonsoft.Json.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Net.Http.Formatting.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Helpers.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Http.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Http.WebHost.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Mvc.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Razor.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.WebPages.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.WebPages.Deployment.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.WebPages.Razor.xml
+D:\Work\ShopOnline\ShopOnline\bin\WebMatrix.Data.xml
+D:\Work\ShopOnline\ShopOnline\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Work\ShopOnline\ShopOnline\bin\WebMatrix.WebData.xml
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.AspNet.xml
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.Core.xml
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OAuth.xml
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OpenId.xml
+D:\Work\ShopOnline\ShopOnline\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Web.Http.OData.xml
+D:\Work\ShopOnline\ShopOnline\bin\Microsoft.Data.Edm.xml
+D:\Work\ShopOnline\ShopOnline\bin\Microsoft.Data.OData.xml
+D:\Work\ShopOnline\ShopOnline\bin\System.Spatial.xml
+D:\Work\ShopOnline\ShopOnline\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\de\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\es\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\it\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\de\System.Spatial.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\es\System.Spatial.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\fr\System.Spatial.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\it\System.Spatial.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\ja\System.Spatial.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\ko\System.Spatial.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\ru\System.Spatial.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\zh-Hans\System.Spatial.resources.dll
+D:\Work\ShopOnline\ShopOnline\bin\zh-Hant\System.Spatial.resources.dll
+D:\Work\ShopOnline\ShopOnline\obj\Debug\ShopOnline.dll
+D:\Work\ShopOnline\ShopOnline\obj\Debug\ShopOnline.pdb
+D:\Work\ShopOnline\ShopOnline\obj\Debug\ShopOnline.csprojResolveAssemblyReference.cache
+D:\Work\ShopOnline1\ShopOnline\bin\ShopOnline.dll.config
+D:\Work\ShopOnline1\ShopOnline\bin\ShopOnline.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ShopOnline.pdb
+D:\Work\ShopOnline1\ShopOnline\bin\Antlr3.Runtime.dll
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.AspNet.dll
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.Core.dll
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.OAuth.dll
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.OpenId.dll
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Work\ShopOnline1\ShopOnline\bin\EntityFramework.dll
+D:\Work\ShopOnline1\ShopOnline\bin\Microsoft.Data.Edm.dll
+D:\Work\ShopOnline1\ShopOnline\bin\Microsoft.Data.OData.dll
+D:\Work\ShopOnline1\ShopOnline\bin\Microsoft.Web.Infrastructure.dll
+D:\Work\ShopOnline1\ShopOnline\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Work\ShopOnline1\ShopOnline\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Work\ShopOnline1\ShopOnline\bin\Newtonsoft.Json.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Net.Http.Formatting.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Spatial.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Helpers.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Http.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Http.OData.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Http.WebHost.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Mvc.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Optimization.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Razor.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.WebPages.Deployment.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.WebPages.dll
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.WebPages.Razor.dll
+D:\Work\ShopOnline1\ShopOnline\bin\WebGrease.dll
+D:\Work\ShopOnline1\ShopOnline\bin\WebMatrix.Data.dll
+D:\Work\ShopOnline1\ShopOnline\bin\WebMatrix.WebData.dll
+D:\Work\ShopOnline1\ShopOnline\bin\EntityFramework.xml
+D:\Work\ShopOnline1\ShopOnline\bin\Newtonsoft.Json.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Net.Http.Formatting.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Helpers.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Http.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Http.WebHost.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Mvc.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Razor.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.WebPages.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.WebPages.Deployment.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.WebPages.Razor.xml
+D:\Work\ShopOnline1\ShopOnline\bin\WebMatrix.Data.xml
+D:\Work\ShopOnline1\ShopOnline\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Work\ShopOnline1\ShopOnline\bin\WebMatrix.WebData.xml
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.AspNet.xml
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.Core.xml
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.OAuth.xml
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.OpenId.xml
+D:\Work\ShopOnline1\ShopOnline\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Web.Http.OData.xml
+D:\Work\ShopOnline1\ShopOnline\bin\Microsoft.Data.Edm.xml
+D:\Work\ShopOnline1\ShopOnline\bin\Microsoft.Data.OData.xml
+D:\Work\ShopOnline1\ShopOnline\bin\System.Spatial.xml
+D:\Work\ShopOnline1\ShopOnline\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\de\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\es\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\it\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\de\System.Spatial.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\es\System.Spatial.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\fr\System.Spatial.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\it\System.Spatial.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ja\System.Spatial.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ko\System.Spatial.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\ru\System.Spatial.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\zh-Hans\System.Spatial.resources.dll
+D:\Work\ShopOnline1\ShopOnline\bin\zh-Hant\System.Spatial.resources.dll
+D:\Work\ShopOnline1\ShopOnline\obj\Debug\ShopOnline.dll
+D:\Work\ShopOnline1\ShopOnline\obj\Debug\ShopOnline.pdb
+D:\Work\ShopOnline1\ShopOnline\obj\Debug\ShopOnline.csprojResolveAssemblyReference.cache

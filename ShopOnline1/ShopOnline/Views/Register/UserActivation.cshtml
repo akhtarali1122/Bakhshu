@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Account Activation";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!-- Page Heading -->
+<section class="page-heading">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Create Account</h1>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb">
+                    <li><a href="~/Home/Dashboard">Home</a></li>
+                    <li class="active">Create Account</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page Heading / End -->
+
+<section class="page-content">
+    <div class="container">
+        <h1> Account Activated Successfully <small><img src="~/Content/AdminContents/img/success.png" /></small></h1>
+
+        @if (ViewData.Model != null)
+        {
+            ShopOnline.Models.User userObj = (ShopOnline.Models.User)ViewData.Model;
+            if (userObj != null)
+            {
+
+
+                <h3>Dear @userObj.UserFirstName @userObj.UserLastName</h3>
+
+                <h6>Your account has been activated successfully</h6>
+                <h6>Please <a href="~/Login/Index" style="text-decoration:underline"><span class="textColorBlue">Login</span></a> to manage your data</h6>
+
+
+            }
+        }
+        else
+        {
+            <h3>Invalid request!</h3>
+
+
+        }
+    </div>
+</section>
+

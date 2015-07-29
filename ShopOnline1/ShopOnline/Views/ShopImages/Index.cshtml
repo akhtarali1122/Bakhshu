@@ -1,0 +1,600 @@
+﻿
+@using ShopOnline.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@{
+    ShopOnline.Models.User userObj = null;
+    if (ViewData.Model != null)
+    {
+        userObj = (ShopOnline.Models.User)ViewData.Model;
+    }
+
+    //if (userObj == null)
+    //{
+    //    userObj = new ShopOnline.Models.User();
+    //}
+
+    string userId = userObj.UserId.ToString();
+    string USER_ID = new ShopOnline.Common.SecurityManager().EncodeString(userId);
+
+}
+
+<script src="~/Scripts/SiteJs/ShopUser_Images.js"></script>
+
+@*<script src="~/Scripts/SiteJs/ManageUsers.js"></script>*@
+@*<script src="~/Scripts/SiteJs/ShopUser.js"></script>*@
+<script src="~/Content/AdminContents/js/bootbox.min.js"></script>
+    <link rel="stylesheet" href="~/Content/AdminContents/css/colorbox.css" />
+
+<style>
+    .bgColorYellow {
+        font-weight: bold;
+        padding: 3px;
+    }
+
+    .profile-contact-links {
+        border: solid 1px #FBD76B;
+        background-color: transparent !important;
+    }
+</style>
+
+
+<div class="page-header" style="margin:0 10%">
+    <div class="pageTitle">Profile Photo</div>
+</div>
+
+<div id="wrapper" style="border:1px solid red; padding:5% 7%">
+
+    <div class="row">
+
+
+        @Html.Partial("OperationMessage")
+
+
+        <div>
+            <div id="user-profile-1" class="user-profile">
+
+
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 center">
+
+                        <form id="frmUserAvatar" name="frmUserAvatar" method="post" enctype="multipart/form-data" action="~/">
+                            <div class="profile-picture">
+                                <div class="profileUploaderBox">
+
+                                    <input class="fileProfile" type="file" id="fileUserProfile" name="fileUserProfile" style="opacity:0" />
+                                </div>
+                                <div class="profilePhotoBox">
+                                    @{
+                                        string avatarPath = "BlankImage.jpg";
+                                        if (!string.IsNullOrWhiteSpace(userObj.ProfilePhoto))
+                                        {
+                                            avatarPath = userObj.ProfilePhoto;
+                                        }
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(avatarPath))
+                                    {
+                                        <img class="img-responsive" title="@userObj.UserFirstName @userObj.UserLastName" alt="@userObj.UserFirstName @userObj.UserLastName" src="~/UploadedImagesThumbnails/@avatarPath" />
+                                    }
+                                </div>
+
+                            </div>
+                            <input type="hidden" id="UserId" name="UserId" value="@USER_ID" />
+                        </form>
+
+                        <div class="space-4"></div>
+
+                        <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right" style="margin-bottom:10px">
+                            <div class="inline position-relative">
+                                <span class="user-title-label">
+                                    <span class="white">@userObj.UserFirstName @userObj.UserLastName</span>
+                                </span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 center">
+
+                        <form id="frmShopAvatar" name="frmShopAvatar" method="post" enctype="multipart/form-data" action="~/">
+                            <div class="profile-picture">
+                                <div class="profileUploaderBox">
+
+                                    <input class="fileProfile" type="file" id="fileShopProfile" name="fileShopProfile" style="opacity:0" />
+                                </div>
+                                <div class="profilePhotoBox">
+                                    @{
+                                        string avatarPath1 = "BlankImage.jpg";
+                                        if (!string.IsNullOrWhiteSpace(userObj.ShopPhoto))
+                                        {
+                                            avatarPath1 = userObj.ShopPhoto;
+                                        }
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(avatarPath1))
+                                    {
+                                        <img class="img-responsive" title="@userObj.ShopName" alt="@userObj.ShopName" src="~/UploadedImagesThumbnails_Shop/@avatarPath1" />
+                                    }
+                                </div>
+
+                            </div>
+                            <input type="hidden" id="UserId" name="UserId" value="@USER_ID" />
+                        </form>
+
+                        <div class="space-4"></div>
+
+                        <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                            <div class="inline position-relative">
+                                <span class="user-title-label">
+                                    <span class="white">@userObj.ShopName</span>
+                                </span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div style="border: 1px dotted #efefef; width: 100%; margin-top: 20px"></div>
+
+                <div style="padding-top:20px">
+                    <div>
+                        <a href="javascript:toggleMe('divNewImage')" class="btn pull-right btn-sm btn-success">
+                            <i class="icon-plus"></i>  Add New Image
+                        </a>
+                    </div>
+                    <div id="divNewImage" style="display:none;clear:both;border:solid 5px #efefef;padding:10px;">
+                        <div style="text-align:right">
+                            <a href="javascript:toggleMe('divNewImage')"><span style="color:Red">[X]</span></a>
+                        </div>
+                        <form id="frmAnimalImage" name="frmAnimalImage" method="post" enctype="multipart/form-data" action="~/ShopImages/AddShopImage">
+
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-4">
+                                    <div style="height:20px"><b>Title</b></div>
+                                    <div>
+                                        <input type="text" id="txtImageTitle" name="txtImageTitle" class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-4">
+                                    <div style="height:20px">&nbsp;</div>
+                                    <div>
+                                        <input type="checkbox" id="chkSlider" name="chkSlider" value="1" />
+                                        Show in home page slider (Resolution: 1122  x 480)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:10px">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input type="file" id="ShopImageFile" name="ShopImageFile" required="required" />
+                                                <input type="hidden" id="UserId" name="UserId" value="@USER_ID" />
+                                            </td>
+                                            <td style="padding-left:10px">
+
+                                                <button type="submit" class="btn pull-right btn-sm btn-primary">
+                                                    <i class="icon-upload"></i> Upload
+                                                </button>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+                <div style="clear:both;height:20px">&nbsp;</div>
+
+                <div class="row" style="padding:20px">
+
+                    <div class="row-fluid">
+                        <ul class="ace-thumbnails">
+
+
+                            @if (userObj.Shop_Image_List != null && userObj.Shop_Image_List.Count() > 0)
+                            {
+                                foreach (Shop_Image shopImage in userObj.Shop_Image_List)
+                                {
+                                    string image_ID = new ShopOnline.Common.SecurityManager().EncodeString(Convert.ToString(shopImage.Shop_Image_Id));
+                                    
+                                    string imagePath = string.Empty;
+                                    if (!string.IsNullOrWhiteSpace(shopImage.Image_Path))
+                                    {
+                                        imagePath = shopImage.User_Id + "/" + shopImage.Image_Path;
+                                    }
+
+                                    if (!string.IsNullOrWhiteSpace(imagePath))
+                                    {
+                                        <li>
+                                            <a href="~/UploadedImages_Shop/@imagePath" data-rel="colorbox">
+                                                <img alt="150x150" src="~/UploadedImagesThumbnails_Shop/@imagePath" style="height:150px;width:150px" />
+                                                <div class="text">
+                                                    <div class="inner">@shopImage.Image_Title</div>
+                                                </div>
+                                            </a>
+
+                                            <div class="tools tools-bottom">
+
+                                                <a id="@("lnkDel" + shopImage.Shop_Image_Id)" href="#" class="red"><i class="icon-trash bigger-130"></i></a>
+
+                                            </div>
+                                        </li>
+
+                                        <script type="text/javascript">
+                                            $("#@("lnkDel" + shopImage.Shop_Image_Id)").click(function () {
+                                                RemoveShopImage('@image_ID');
+                                            });
+                                        </script>
+
+                                    }
+
+
+                                }
+                            }
+
+
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<script src="~/Content/AdminContents/js/jquery.colorbox-min.js"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var colorbox_params = {
+            reposition: true,
+            scalePhotos: true,
+            scrolling: false,
+            previous: '<i class="icon-arrow-left"></i>',
+            next: '<i class="icon-arrow-right"></i>',
+            close: '&times;',
+            current: '{current} of {total}',
+            maxWidth: '100%',
+            maxHeight: '100%',
+            onOpen: function () {
+                document.body.style.overflow = 'hidden';
+            },
+            onClosed: function () {
+                document.body.style.overflow = 'auto';
+            },
+            onComplete: function () {
+                $.colorbox.resize();
+            }
+        };
+
+        $('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+        $("#cboxLoadingGraphic").append("<i class='icon-spinner orange'></i>");//let's add a custom loading icon
+
+        /**$(window).on('resize.colorbox', function() {
+            try {
+                //this function has been changed in recent versions of colorbox, so it won't work
+                $.fn.colorbox.load();//to redraw the current frame
+            } catch(e){}
+        });*/
+    })
+</script>
+@{
+    userObj = null;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="row">
+        <div class="col-xs-12">
+
+            <div>
+                <div id="user-profile-1" class="user-profile row">
+                    <div class="col-xs-12 col-sm-3 center">
+                        <div>
+                            <form id="frmUserAvatar" name="frmUserAvatar" method="post" enctype="multipart/form-data" action="~/">
+                                <div class="profile-picture">
+                                    <div class="profileUploaderBox">
+
+                                        <input class="fileProfile" type="file" id="fileUserProfile" name="fileUserProfile" style="opacity:0" />
+                                    </div>
+                                    <div class="profilePhotoBox">
+                                        @{
+                                            string avatarPath = "BlankImage.jpg";
+                                            if (!string.IsNullOrWhiteSpace(userObj.ProfilePhoto))
+                                            {
+                                                avatarPath = userObj.ProfilePhoto;
+                                            }
+                                        }
+                                        <img class="img-responsive" title="@userObj.UserFirstName @userObj.UserLastName" alt="@userObj.UserFirstName @userObj.UserLastName" src="~/UploadedImagesThumbnails/@avatarPath" />
+
+                                    </div>
+
+                                </div>
+                                <input type="hidden" id="UserId" name="UserId" value="@userObj.UserId" />
+                            </form>
+                            <div class="space-4"></div>
+
+                            <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                                <div class="inline position-relative">
+                                    <span class="user-title-label">
+                                        <span class="white">@userObj.UserFirstName @userObj.UserLastName</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        @*<div>
+                            <form id="frmUserAvatar" name="frmUserAvatar" method="post" enctype="multipart/form-data" action="~/">
+                                <div class="profile-picture">
+                                    <div class="profileUploaderBox">
+
+                                        <input class="fileProfile" type="file" id="fileUserProfile" name="fileUserProfile" style="opacity:0" />
+                                    </div>
+                                    <div class="profilePhotoBox">
+                                        @{
+                                            string ShopAvatarPath = "BlankImage.jpg";
+                                            if (!string.IsNullOrWhiteSpace(userObj.ShopPhoto))
+                                            {
+                                                ShopAvatarPath = userObj.ShopPhoto;
+                                            }
+                                        }
+                                        <img class="img-responsive" title="@userObj.ShopName" alt="@userObj.ShopName" src="~/UploadedImagesThumbnails/@ShopAvatarPath" />
+
+                                    </div>
+
+                                </div>
+                                <input type="hidden" id="UserId" name="UserId" value="@userObj.UserId" />
+                            </form>
+                            <div class="space-4"></div>
+
+                            <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                                <div class="inline position-relative">
+                                    <span class="user-title-label">
+                                        <span class="white">@userObj.ShopName</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.col -->
+    </div>*@
+
+
+@*<div id="wrapper">
+
+        <div class="container" id="page-wrapper">
+            <div class="row" style="border:1px solid red">
+
+                    <h2>heading 1</h2>
+                    <div class="style4" style="border:1px solid blue;width:250px">
+                        <form id="frmUserAvatar" name="frmUserAvatar" method="post" enctype="multipart/form-data" action="~/">
+                            <div class="profile-picture">
+                                <div class="profileUploaderBox">
+
+                                    <input class="fileProfile" type="file" id="fileUserProfile" name="fileUserProfile" style="opacity:0" />
+                                </div>
+                                <div class="profilePhotoBox">
+                                    @{
+                                        string avatarPath2 = "BlankImage.jpg";
+                                        if (!string.IsNullOrWhiteSpace(userObj.ProfilePhoto))
+                                        {
+                                            avatarPath2 = userObj.ProfilePhoto;
+                                        }
+                                    }
+                                    <img class="img-responsive" title="@userObj.UserFirstName @userObj.UserLastName" alt="@userObj.UserFirstName @userObj.UserLastName" src="~/UploadedImagesThumbnails/@avatarPath2" />
+
+                                </div>
+
+                            </div>
+                            <input type="hidden" id="UserId" name="UserId" value="@userObj.UserId" />
+                        </form>
+                        <div class="space-4"></div>
+
+                        <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                            <div class="inline position-relative">
+                                <span class="user-title-label">
+                                    <span class="white">@userObj.UserFirstName @userObj.UserLastName</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <h2>heading2</h2>
+                    <div class="style4" style="border: 1px solid blue; width: 250px">
+                        <form id="frmUserAvatar" name="frmUserAvatar" method="post" enctype="multipart/form-data" action="~/">
+                            <div class="profile-picture">
+                                <div class="profileUploaderBox">
+
+                                    <input class="fileProfile" type="file" id="fileUserProfile" name="fileUserProfile" style="opacity:0" />
+                                </div>
+                                <div class="profilePhotoBox">
+                                    @{
+                                        string avatarPath01 = "BlankImage.jpg";
+                                        if (!string.IsNullOrWhiteSpace(userObj.ProfilePhoto))
+                                        {
+                                            avatarPath01 = userObj.ProfilePhoto;
+                                        }
+                                    }
+                                    <img class="img-responsive" title="@userObj.UserFirstName @userObj.UserLastName" alt="@userObj.UserFirstName @userObj.UserLastName" src="~/UploadedImagesThumbnails/@avatarPath01" />
+
+                                </div>
+
+                            </div>
+                            <input type="hidden" id="UserId" name="UserId" value="@userObj.UserId" />
+                        </form>
+                        <div class="space-4"></div>
+
+                        <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                            <div class="inline position-relative">
+                                <span class="user-title-label">
+                                    <span class="white">@userObj.ShopName </span>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header">
+
+    </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div id="wrapper">
+
+        <div class="container" id="page-wrapper">
+            <div class="row">
+                <div class="3u" style="border:1px solid red; width:250px">
+                    <section id="pbox1">
+                        <h2>User Photo</h2>
+                        <ul class="style4">
+
+
+                            <form id="frmUserAvatar" name="frmUserAvatar" method="post" enctype="multipart/form-data" action="~/">
+                                <div class="profile-picture">
+                                    <div class="profileUploaderBox">
+
+                                        <input class="fileProfile" type="file" id="fileUserProfile" name="fileUserProfile" style="opacity:0" />
+                                    </div>
+                                    <div class="profilePhotoBox">
+                                        @{
+                                            string avatarPath2 = "BlankImage.jpg";
+                                            if (!string.IsNullOrWhiteSpace(userObj.ProfilePhoto))
+                                            {
+                                                avatarPath2 = userObj.ProfilePhoto;
+                                            }
+                                        }
+                                        <img class="img-responsive" title="@userObj.UserFirstName @userObj.UserLastName" alt="@userObj.UserFirstName @userObj.UserLastName" src="~/UploadedImagesThumbnails/@avatarPath2" />
+
+                                    </div>
+
+                                </div>
+                                <input type="hidden" id="UserId" name="UserId" value="@userObj.UserId" />
+                            </form>
+                            <div class="space-4"></div>
+
+                            <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                                <div class="inline position-relative">
+                                    <span class="user-title-label">
+                                        <span class="white">@userObj.UserFirstName @userObj.UserLastName</span>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="3u" style="border:1px solid red; width:250px">
+                    <section id="pbox3">
+                        <h2>Shop Photo</h2>
+                        <ul class="style5">
+
+                            <div>
+                                <form id="frmUserAvatar" name="frmUserAvatar" method="post" enctype="multipart/form-data" action="~/">
+                                    <div class="profile-picture">
+                                        <div class="profileUploaderBox">
+
+                                            <input class="fileProfile" type="file" id="fileUserProfile" name="fileUserProfile" style="opacity:0" />
+                                        </div>
+                                        <div class="profilePhotoBox">
+                                            @{
+                                                string avatarPath3 = "BlankImage.jpg";
+                                                if (!string.IsNullOrWhiteSpace(userObj.ShopPhoto))
+                                                {
+                                                    avatarPath3 = userObj.ShopPhoto;
+                                                }
+                                            }
+                                            <img class="img-responsive" title="@userObj.ShopName" alt="@userObj.ShopName" src="~/UploadedImagesThumbnails/@avatarPath3" />
+
+                                        </div>
+
+                                    </div>
+                                    <input type="hidden" id="UserId" name="UserId" value="@userObj.UserId" />
+                                </form>
+                                <div class="space-4"></div>
+
+                                <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+                                    <div class="inline position-relative">
+                                        <span class="user-title-label">
+                                            <span class="white">@userObj.ShopName</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </ul>
+
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+    </div>*@

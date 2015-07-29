@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "Shop Register";
+    Layout = "~/Views/Shared/VisitorLayout.cshtml";
+}
+
+
+
+@*<link rel="stylesheet" href="http://cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">*@
+<script src="http://formValidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="http://formValidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script src="~/Scripts/SiteJs/ShopRegValidation.js"></script>
+<script src="~/Content/AdminContents/js/ckeditor/ckeditor.js"></script>
+
+<!-- Page Heading -->
+<section class="page-heading">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <ul class="breadcrumb">
+                    <li><a href="~/Home/Index">Home</a></li>
+                    <li class="active">Shop_Register</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <h1>Create Shop</h1>
+        </div>
+    </div>
+</section>
+<!-- Page Heading / End -->
+
+
+<section class="page-content">
+    <div class="container">
+        <h5>Please provide some basic information to create your Shop.</h5>
+
+        @Html.Partial("ClientOperationMessage")
+
+        <div class="row">
+            @*<div style="border: 3px solid blue;height:1430px" class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+
+                </div>*@
+
+            <div style="border: 3px solid #bcbcbc" class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+
+                <form id="frmRegister" action="~/Register/RegisterShop" method="post">
+                    <div class="form-group">
+                        <label style="color: #438eb9">Shop Name<span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Shop Name" id="txtShopName" name="txtShopName" value="@ViewData["txtShopName"]" maxlength="80" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label style="color: #438eb9">Shop Country<span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Shop Country" id="txtShopCountry" name="txtShopCountry" value="@ViewData["txtShopCountry"]" maxlength="40" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label style="color: #438eb9">Shop City<span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Shop City" id="txtShopCity" name="txtShopCity" value="@ViewData["txtShopCity"]" maxlength="40" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label style="color: #438eb9">Shop Address<span class="required">*</span></label>
+                        <input type="text" class="form-control" placeholder="Shop Address" id="txtShopAddress" name="txtShopAddress" value="@ViewData["txtShopAddress"]" maxlength="450" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <label style="color: #438eb9">Map Url <span class="opn">(optional)</span></label>
+                        <input type="text" class="form-control" placeholder="Map Url" id="txtMapUrl" name="txtMapUrl" value="@ViewData["txtMapUrl"]" maxlength="950" />
+                    </div>
+                    <div class="form-group has-feadback"  >
+                        <label style="color: #438eb9">Shop Description<span class="required">*</span></label>
+                        <textarea rows="8" class="form-control ckeditor" @*class="form-control"*@ id="txtShopDescription" name="txtShopDescription" maxlength="1950" required="required">@ViewData["txtShopDescription"]</textarea>
+                        </div>
+                    <div class="form-group">
+                        <button type="submit" class="width-35 pull-right btn btn-sm btn-primary">
+                            <i class="next-btn"></i>
+                            Next
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- <![endif]-->
+<!--[if IE]>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+@*<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        $('#frmRegister').validating({
+            alert: 'helloooo',
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                txtFirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The name is required'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: 'The name must be more than 6 and less than 30 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z0-9_]+$/,
+                            message: 'The name can only consist of alphabetical, number and underscore'
+                        }
+                    }
+                },
+
+
+            }
+        });
+    });
+
+
+
+</script>*@

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Form Validation using a sample registration form</title>
+    <link rel="icon" type="image/x-icon" href="http://formValidation.io/asset/img/favicon.ico">
+    <link rel="stylesheet" href="http://formvalidation.io/vendor/formvalidation/css/formValidation.min.css" />
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/fontawesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cardo:400,400italic,700">
+    <link rel="stylesheet" href="http://formValidation.io/vendor/pygments/github.css">
+    <link rel="stylesheet" href="http://formValidation.io/asset/css/style.css">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="http://formValidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
+    <script src="http://formValidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+</head>
+<body style="width:1000px; margin:0 auto">
+
+<h1>Registration Form</h1>
+
+    <form id="productForm">
+        <div class="form-group">
+            <label>Product name</label>
+            <input type="text" class="form-control" name="name" />
+        </div>
+
+        <div class="form-group">
+            <label>Price</label>
+            <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" class="form-control" name="price" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Size</label>
+            <div class="checkbox">
+                <label><input type="checkbox" name="size[]" value="s" /> S</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Available in store</label>
+            <div class="radio">
+                <label><input type="radio" name="availability" value="yes" /> Yes</label>
+            </div>
+            <div class="radio">
+                <label><input type="radio" name="availability" value="no" /> No</label>
+            </div>
+        </div>
+
+        <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
+        <button type="submit" class="btn btn-default">Add product</button>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $('#productForm').formValidation({
+                framework: 'bootstrap',
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    name: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The name is required'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 30,
+                                message: 'The name must be more than 6 and less than 30 characters long'
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z0-9_]+$/,
+                                message: 'The name can only consist of alphabetical, number and underscore'
+                            }
+                        }
+                    },
+                    price: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The price is required'
+                            },
+                            numeric: {
+                                message: 'The price must be a number'
+                            }
+                        }
+                    },
+                    'size[]': {
+                        validators: {
+                            notEmpty: {
+                                message: 'The size is required'
+                            }
+                        }
+                    },
+                    availability: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The availability option is required'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

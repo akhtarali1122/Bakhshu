@@ -1,0 +1,13 @@
+1)--registered user menu on small screen
+2)--formValidation of user registration form like
+     http://formvalidation.io/getting-started/
+     http://stackoverflow.com/questions/27786451/bootstrapvalidator-validate-text-fields-hidden-and-specific-for-stepwise
+3)--"userRegistration" form textbox validation(cell,phone,fax take only number)
+4)--chose date of birth on small screen on userRegistration form
+5)--characters counter on shop description
+6)--"Account Created successully" form desiging
+7)--"Activeted SuccessFully" form desiging
+8)--shopRegister next button width
+9)--In "change Avater" Delete avater exception
+10)-- on shopIndex get only required data from user table
+11)--form-control is not working on textarea

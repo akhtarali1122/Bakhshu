@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ShopOnline" Class="shoponlineDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=deveolper;Initial Catalog=ShopOnline;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ShopOnlineConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Shop_Images" Member="Shop_Images">
+    <Type Name="Shop_Image">
+      <Column Name="Shop_Image_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Image_Title" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Image_Path" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_For_Home_Page_Slider" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserRoleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserLoginName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UserPassword" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UserFirstName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UserLastName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="UserContactNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="UserStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_Email" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ProfilePhoto" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ShopName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ShopCountry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShopCity" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ShopAddress" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ShopMapUrl" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ShopPhoto" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ShopDescription" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Is_ShopCreated" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Shop_Last_Updated_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Last_Updated_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shop_Items" Member="Shop_Items">
+    <Type Name="Shop_Item">
+      <Column Name="ItemId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ItemCompany" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ItemBrand" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ItemPrice" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Shop_News" Member="Shop_News">
+    <Type Name="Shop_New">
+      <Column Name="NewsId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="News_HeadLine" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="News_Detail" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Created_On" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupMembers" Member="GroupMembers">
+    <Type Name="GroupMember">
+      <Column Name="GroupMemberId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Group_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="User_Id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MemberRole" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AddBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Groups" Member="Groups">
+    <Type Name="Group">
+      <Column Name="GroupId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="User_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="GroupDescription" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="GroupType" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

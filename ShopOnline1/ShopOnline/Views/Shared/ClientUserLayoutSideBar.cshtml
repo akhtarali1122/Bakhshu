@@ -1,0 +1,80 @@
+﻿@{
+
+    string selectedMenu = "";
+    string selectedParentMenu = "";
+    if (ViewData[ShopOnline.Common.Constants.MENU] != null)
+    {
+        selectedMenu = Convert.ToString(ViewData[ShopOnline.Common.Constants.MENU]);
+    }
+    if (ViewData[ShopOnline.Common.Constants.MENU_PARENT] != null)
+    {
+        selectedParentMenu = Convert.ToString(ViewData[ShopOnline.Common.Constants.MENU_PARENT]);
+    }
+}
+
+
+<div class="sidebar" id="sidebar">
+    <script type="text/javascript">
+        try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+    </script>
+
+
+    <ul class="nav nav-list">
+
+
+        @{
+            string dashboardMenuCss = "";
+            if (selectedMenu == ShopOnline.Common.Constants.MENU_DASHBOARD)
+            {
+                dashboardMenuCss = "active";
+            }
+        }
+
+
+        <li class="@dashboardMenuCss">
+            <a href="~/Home/Dashboard">
+                <i class="icon-dashboard"></i>
+                <span class="menu-text"> Settings </span>
+            </a>
+        </li>
+
+        @{
+            string myAnimalMenuCss = "";
+            if (selectedMenu == ShopOnline.Common.Constants.MENU_MY_SHOP)
+            {
+                myAnimalMenuCss = "active open";
+            }
+        }
+
+        <li class="@myAnimalMenuCss">
+            <a href="~/MyAnimals/Index" class="dropdown-toggle">
+                <i class="icon-edit"></i>
+                <span class="menu-text">Home</span>
+            </a>
+        </li>
+
+        @{
+            string myCameraMenuCss = "";
+            if (selectedMenu == ShopOnline.Common.Constants.MENU_MY_CAMERAS)
+            {
+                myCameraMenuCss = "active open";
+            }
+        }
+
+        <li class="@myCameraMenuCss">
+            <a href="~/MyAnimals/Index" class="dropdown-toggle">
+                <i class="icon-user"></i>
+                <span class="menu-text">Profile</span>
+            </a>
+        </li>
+
+    </ul><!-- /.nav-list -->
+
+    <div class="sidebar-collapse" id="sidebar-collapse">
+        <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+    </div>
+
+    <script type="text/javascript">
+        try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+    </script>
+</div>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "User Registration Success";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<!-- Page Heading -->
+<section class="page-heading">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Create Account</h1>
+            </div>
+            <div class="col-md-6">
+                <ul class="breadcrumb">
+                    <li><a href="~/Home/Dashboard">Home</a></li>
+                    <li class="active">Create Account</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page Heading / End -->
+
+<section class="page-content">
+    <div class="container">
+        <h1>User Registered Successfully <small><img src="~/Content/AdminContents/img/success.png" /></small></h1>
+        @{
+            ShopOnline.Models.User userObj = (ShopOnline.Models.User)ViewData.Model;
+            if (userObj != null && userObj.UserStatus == Convert.ToInt32(ShopOnline.Common.UserStatusType.InActive))
+            {
+
+                <text>
+                    <h3>Dear @userObj.UserFirstName @userObj.UserLastName</h3>
+
+                    <h5> Please check your email (<a href="mailto:@userObj.Contact_Email" style="color:#406699">@userObj.Contact_Email</a>) for your account activation </h5>
+                </text>
+            }
+        }
+    </div>
+</section>

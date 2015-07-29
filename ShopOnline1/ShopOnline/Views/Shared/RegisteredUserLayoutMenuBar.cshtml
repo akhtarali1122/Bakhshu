@@ -1,0 +1,389 @@
+﻿@{
+
+    string selectedMenu = "";
+    string selectedParentMenu = "";
+    if (ViewData[ShopOnline.Common.Constants.MENU] != null)
+    {
+        selectedMenu = Convert.ToString(ViewData[ShopOnline.Common.Constants.MENU]);
+    }
+    if (ViewData[ShopOnline.Common.Constants.MENU_PARENT] != null)
+    {
+        selectedParentMenu = Convert.ToString(ViewData[ShopOnline.Common.Constants.MENU_PARENT]);
+    }
+}
+
+<div class="sidebar" id="sidebar">
+    <script type="text/javascript">
+        try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+    </script>
+
+
+    <ul class="nav nav-list">
+
+
+        @{
+            string dashboardMenuCss = "";
+            if (selectedMenu == ShopOnline.Common.Constants.MENU_DASHBOARD)
+            {
+                dashboardMenuCss = "active";
+            }
+        }
+
+
+        <li class="@dashboardMenuCss">
+            <a href="~/Home/DashBoard">
+                <i class="icon-dashboard"></i>
+                <span class="menu-text"> Dashboard </span>
+            </a>
+        </li>
+
+        @{
+            string profileParentMenuCss = "";
+            if (selectedParentMenu == ShopOnline.Common.Constants.MENU_MANAGE_PROFILE)
+            {
+                profileParentMenuCss = "active open";
+            }
+        }
+
+        <li class="@profileParentMenuCss">
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-user"></i>
+                <span class="menu-text">Profile</span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+
+                @if (selectedMenu == ShopOnline.Common.Constants.EDIT_USER_PROFILE)
+                {
+                    <li class="active">
+                        <a href="~/UpdateProfiles/UpdateUser">
+                            <i class="icon-double-angle-right"></i>
+                            User Profile
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/UpdateProfiles/UpdateUser">
+                            <i class="icon-double-angle-right"></i>
+                            User Profile
+                        </a>
+                    </li>
+                }
+
+                @if (selectedMenu == ShopOnline.Common.Constants.EDIT_SHOP_PROFILE)
+                {
+                    <li class="active">
+                        <a href="~/UpdateProfiles/UpdateShop">
+                            <i class="icon-double-angle-right"></i>
+                            Shop Profile
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/UpdateProfiles/UpdateShop">
+                            <i class="icon-double-angle-right"></i>
+                            Shop Profile
+                        </a>
+                    </li>
+                }
+
+            </ul>
+        </li>
+
+        @{
+            string picsParentMenuCss = "";
+            if (selectedParentMenu == ShopOnline.Common.Constants.MENU_MANAGE_PICTURES)
+            {
+                picsParentMenuCss = "active open";
+            }
+        }
+
+        <li class="@picsParentMenuCss">
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-picture"></i>
+                <span class="menu-text">Pictures</span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+
+                @if (selectedMenu == ShopOnline.Common.Constants.EDIT_PICTURES)
+                {
+                    <li class="active">
+                        <a href="~/Shopimages/index">
+                            <i class="icon-double-angle-right"></i>
+                            Edit Pictures
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/Shopimages/index">
+                            <i class="icon-double-angle-right"></i>
+                            Edit Pictures
+                        </a>
+                    </li>
+                }
+
+            </ul>
+        </li>
+
+        @{
+            string NewsParentMenuCss = "";
+            if (selectedParentMenu == ShopOnline.Common.Constants.MENU_MANAGE_NEWS)
+            {
+                NewsParentMenuCss = "active open";
+            }
+        }
+        <li class="@NewsParentMenuCss">
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-edit"></i>
+                <span class="menu-text">New Arrival</span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+
+                @if (selectedMenu == ShopOnline.Common.Constants.ADD_NEWS)
+                {
+                    <li class="active">
+                        <a href="~/ShopNews/AddNewsForm">
+                            <i class="icon-double-angle-right"></i>
+                            Add News
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/ShopNews/AddNewsForm">
+                            <i class="icon-double-angle-right"></i>
+                            Add News
+                        </a>
+                    </li>
+                }
+
+                @if (selectedMenu == ShopOnline.Common.Constants.MANAGE_NEWS)
+                {
+                    <li class="active">
+                        <a href="~/ShopNews/ManageShopNews">
+                            <i class="icon-double-angle-right"></i>
+                            Manage News
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/ShopNews/ManageShopNews">
+                            <i class="icon-double-angle-right"></i>
+                            Manage News
+                        </a>
+                    </li>
+                }
+
+            </ul>
+        </li>
+
+        @{
+            string ItemParentMenuCss = "";
+            if (selectedParentMenu == ShopOnline.Common.Constants.MENU_MANAGE_ITEMS)
+            {
+                ItemParentMenuCss = "active open";
+            }
+        }
+        <li class="@ItemParentMenuCss">
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-edit"></i>
+                <span class="menu-text">Items</span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+
+                @if (selectedMenu == ShopOnline.Common.Constants.ADD_ITEMS)
+                {
+                    <li class="active">
+                        <a href="~/ShopItems/Index">
+                            <i class="icon-double-angle-right"></i>
+                            Add Items
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/ShopItems/Index">
+                            <i class="icon-double-angle-right"></i>
+                            Add Items
+                        </a>
+                    </li>
+                }
+
+                @if (selectedMenu == ShopOnline.Common.Constants.MANAGE_ITEMS)
+                {
+                    <li class="active">
+                        <a href="~/ShopItems/ManageShopItems">
+                            <i class="icon-double-angle-right"></i>
+                            Manage Items
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/ShopItems/ManageShopItems">
+                            <i class="icon-double-angle-right"></i>
+                            Manage Items
+                        </a>
+                    </li>
+                }
+
+            </ul>
+        </li>
+
+        @{
+            string GroupParentMenuCss = "";
+            if (selectedParentMenu == ShopOnline.Common.Constants.MENU_MANAGE_GROUPS)
+            {
+                GroupParentMenuCss = "active open";
+            }
+        }
+        <li class="@GroupParentMenuCss">
+            <a href="#" class="dropdown-toggle">
+                <i class="icon-edit"></i>
+                <span class="menu-text">Groups</span>
+
+                <b class="arrow icon-angle-down"></b>
+            </a>
+
+            <ul class="submenu">
+
+                @if (selectedMenu == ShopOnline.Common.Constants.CREATE_GROUP)
+                {
+                    <li class="active">
+                        <a href="~/Groups/CreateGroup">
+                            <i class="icon-double-angle-right"></i>
+                            Create Group
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/Groups/CreateGroup">
+                            <i class="icon-double-angle-right"></i>
+                            Create Group
+                        </a>
+                    </li>
+                }
+
+                @if (selectedMenu == ShopOnline.Common.Constants.MANAGE_GROUPS)
+                {
+                    <li class="active">
+                        <a href="~/Groups/ManageGroups">
+                            <i class="icon-double-angle-right"></i>
+                            Manage Groups
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/Groups/ManageGroups">
+                            <i class="icon-double-angle-right"></i>
+                            Manage Groups
+                        </a>
+                    </li>
+                }
+
+            </ul>
+        </li>
+    </ul><!-- /.nav-list -->
+
+    <div class="sidebar-collapse" id="sidebar-collapse">
+        <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+    </div>
+
+    <script type="text/javascript">
+        try { ace.settings.check('sidebar', 'collapsed') } catch (e) { }
+    </script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<link href="~/Content/UserContent/RegisteredUserCSS/normalize.css" rel="stylesheet" />
+<link href="~/Content/UserContent/RegisteredUserCSS/style.css" rel="stylesheet" />
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+    $(function () {
+        var pull = $('#pull');
+        menu = $('nav .clearfix');
+        menuHeight = menu.height();
+
+        $(pull).on('mouseover', function (e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+
+        $(window).resize(function () {
+            var w = $(window).width();
+            if (w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+    });
+
+</script>
+
+<nav class="clearfix">
+    <ul class=" clearfix">
+        <li><a href="~/Home/ShopIndex">Home</a></li>
+        <li class="sousMenu">
+            <a href="#">Profile<span class="caret"></span></a>
+            <ul>
+                <li><a href="~/UpdateProfiles/UpdateUser">Edit User</a></li>
+                <li><a href="~/UpdateProfiles/UpdateShop">Edit Shop</a></li>
+                <li><a href="~/Shopimages/index">Edit Photos</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Groups</a></li>
+        <li><a href="#">Protest Centre</a></li>
+        <li><a href="#">Messages</a></li>
+    </ul>
+    <a href="#" id="pull">Menu</a>
+</nav>*@
+
+
+

@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "CreateGroup";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@if (ViewData["hidGroupId"] != null)
+{
+    <div class="page-header">
+        <div class="pageTitle">Group Setting</div>
+    </div>
+}
+else
+{
+    <div class="page-header">
+        <div class="pageTitle">Create new Group</div>
+    </div>
+}
+@*<link rel="stylesheet" href="http://cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">*@
+@*<script src="http://formValidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
+    <script src="http://formValidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>*@
+
+
+
+
+
+<div class="row">
+    <div class="col-xs-12">
+        @Html.Partial("OperationMessage")
+        <div style="padding:20px">
+            <form id="frmadditem" name="frmadditem" action="~/Groups/AddGroup" method="post">
+
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">Group Name<span style="color:Red;margin-left:3px">*</span></div>
+
+                    <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8">
+                        <input type="text" placeholder="Group Name" class="form-control" id="txtGroupName" name="txtGroupName" value="@ViewData["txtGroupName"]" maxlength="250" />
+                    </div>
+                </div>
+                <div class="linebr">&nbsp;</div>
+                <div class="linebr">&nbsp;</div>
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">Description<span style="color:Red;margin-left:3px">*</span></div>
+                    <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8">
+                        <textarea rows="3" class="form-control" placeholder="Description" id="txtDescription" name="txtDescription" maxlength="450" required="required">@Html.Raw(ViewData["txtDescription"])</textarea>
+                    </div>
+                </div>
+                <div class="linebr">&nbsp;</div>
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">Group Type<span style="color:Red;margin-left:3px">*</span></div>
+                    <div class="inline checkbox">
+                        @if (ViewData["radType"] != null && ViewData["radType"].ToString().Equals("Public"))
+                        {
+                            <table>
+                                <tr>
+                                    <td style="width:20px">
+                                        <input type="radio" id="radPublic" name="radType" checked="checked" value="Public">
+                                    </td>
+                                    <td style="padding-left:5px;width:80px">
+                                        Public
+                                    </td>
+                                    <td style="width:20px">
+                                        <input type="radio" id="radClosed" name="radType" value="Closed">
+                                    </td>
+                                    <td style="padding-left:5px;width:80px">
+                                        Closed
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                        else if (ViewData["radType"] != null && ViewData["radType"].ToString().Equals("Closed"))
+                        {
+                            <table>
+                                <tr>
+                                    <td style="width:20px">
+                                        <input type="radio" id="radPublic" name="radType" value="Public">
+                                    </td>
+                                    <td style="padding-left:5px;width:80px">
+                                        Public
+                                    </td>
+                                    <td style="width:20px">
+                                        <input type="radio" id="radClosed" name="radType" checked="checked" value="Closed">
+                                    </td>
+                                    <td style="padding-left:5px;width:80px">
+                                        Closed
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+                        else
+                        {
+
+                            <table>
+                                <tr>
+                                    <td style="width:20px">
+                                        <input type="radio" id="radPublic" name="radType" value="Public" required="required">
+                                    </td>
+                                    <td style="padding-left:5px;width:80px">
+                                        Public
+                                    </td>
+                                    <td style="width:20px">
+                                        <input type="radio" id="radClosed" name="radType" value="Closed" required="required">
+                                    </td>
+                                    <td style="padding-left:5px;width:80px">
+                                        Closed
+                                    </td>
+                                </tr>
+                            </table>
+                        }
+
+                    </div>
+                </div>
+                @if (ViewData["hidGroupId"] != null)
+                {
+                    <input type="hidden" id="hidGroupId" name="hidGroupId" value="@ViewData["hidGroupId"]" />
+                }
+                @*@if (ViewData["hidUserId"] != null)
+                    {
+                        <input type="hidden" id="hidUserId" name="hidUserId" value="@ViewData["hidUserId"]" />
+                    }*@
+                <div class="linebr">&nbsp;</div>
+                <div class="linebr">&nbsp;</div>
+                @if (ViewData["hidGroupId"] != null)
+                {
+                    <div class="form-group">
+                        <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">&nbsp;</label>
+                        <div class="col-xs-10 col-sm-10 col-md-10">
+                            <button class="btn btn-primary btn-sm" type="submit" id="btnSubmitItem" style="margin-right:5px">
+                                <i class="icon-ok bigger-110"></i>
+                                Save
+                            </button>
+                            <button class="btn btn-info btn-sm" type="button" id="btnCancelEditItem">
+                                <i class="icon-reply align-top bigger-125"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">&nbsp;</div>
+                        <div class="col-xs-6 col-sm-8 col-md-4 col-lg-4">
+                            <button class="btn btn-primary btn-sm" type="submit" id="btnSubmitItem" style="margin-right:5px">
+                                <i class="icon-ok bigger-110"></i>
+                                Create
+                            </button>
+                        </div>
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</div>

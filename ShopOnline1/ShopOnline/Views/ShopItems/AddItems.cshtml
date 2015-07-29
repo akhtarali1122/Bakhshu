@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "Add Items";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@if (ViewData["hidItemId"] != null)
+{
+    <div class="page-header">
+        <div class="pageTitle">Edit Shop Items</div>
+    </div>
+}
+else
+{
+    <div class="page-header">
+        <div class="pageTitle">Add Shop Items</div>
+    </div>
+}
+@*<link rel="stylesheet" href="http://cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">*@
+<script src="http://formValidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="http://formValidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script src="~/Scripts/SiteJs/ShopItemValidation.js"></script>
+<script src="~/Scripts/SiteJs/ShopItems.js"></script>
+
+<div class="row">
+    <div class="col-xs-12">
+        @Html.Partial("OperationMessage")
+
+        <div style="padding:20px">
+            <form id="frmadditem" name="frmadditem" action="~/ShopItems/AddItem" method="post">
+
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">Item Name<span style="color:Red;margin-left:3px">*</span></div>
+                    <div class="col-xs-6 col-sm-8 col-md-4 col-lg-4">
+                        <input type="text" placeholder="Item Name" class="form-control" id="txtItemName" name="txtItemName" value="@ViewData["txtItemName"]" maxlength="250" />
+                    </div>
+                </div>
+                <div class="linebr">&nbsp;</div>
+                <div class="linebr">&nbsp;</div>
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">Item Company<span style="color:Red;margin-left:3px">*</span></div>
+                    <div class="col-xs-6 col-sm-8 col-md-4 col-lg-4">
+                        <input type="text" placeholder="Item Company" class="form-control" id="txtItemCompany" name="txtItemCompany" value="@ViewData["txtItemCompany"]" maxlength="250" />
+                    </div>
+                </div>
+                <div class="linebr">&nbsp;</div>
+                <div class="linebr">&nbsp;</div>
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">Item Brand<span style="color:Red;margin-left:3px">*</span></div>
+
+                    <div class="col-xs-6 col-sm-8 col-md-4 col-lg-4">
+                        <input type="text" placeholder="Item Brand" class="form-control" id="txtItemBrand" name="txtItemBrand" value="@ViewData["txtItemBrand"]" maxlength="250" />
+                    </div>
+                </div>
+                <div class="linebr">&nbsp;</div>
+                <div class="linebr">&nbsp;</div>
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">Price<span style="color:Red;margin-left:3px">*</span></div>
+
+                    <div class="col-xs-6 col-sm-8 col-md-4 col-lg-4">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" placeholder="Price" class="form-control" id="txtPrice" name="txtPrice" value="@ViewData["txtPrice"]" maxlength="250" />
+                        </div>
+                    </div>
+                </div>
+                <div class="linebr">&nbsp;</div>
+                <div class="linebr">&nbsp;</div>
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2"></div>
+                    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+
+                        @if (ViewData["chkActive"] != null && ViewData["chkActive"].Equals(true))
+                        {
+                            <input type="checkbox" id="chkActive" name="chkActive" value="1" checked="checked" />
+                        }
+                        else
+                        {
+                            <input type="checkbox" id="chkActive" name="chkActive" value="1" />
+                        }
+
+                        &nbsp;Active
+                    </div>
+
+                </div>
+                @if (ViewData["hidItemId"] != null)
+                {
+                    <input type="hidden" id="hidItemId" name="hidItemId" value="@ViewData["hidItemId"]" />
+                }
+                @*@if (ViewData["hidUserId"] != null)
+            {
+                <input type="hidden" id="hidUserId" name="hidUserId" value="@ViewData["hidUserId"]" />
+            }*@
+                <div class="linebr">&nbsp;</div>
+                <div class="linebr">&nbsp;</div>
+                @if (ViewData["hidItemId"] != null)
+                {
+                    <div class="form-group">
+                        <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">&nbsp;</label>
+                        <div class="col-xs-10 col-sm-10 col-md-10">
+                            <button class="btn btn-primary btn-sm" type="submit" id="btnSubmitItem" style="margin-right:5px">
+                                <i class="icon-ok bigger-110"></i>
+                                Save
+                            </button>
+                            <button class="btn btn-info btn-sm" type="button" id="btnCancelEditItem">
+                                <i class="icon-reply align-top bigger-125"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">&nbsp;</div>
+                        <div class="col-xs-6 col-sm-8 col-md-4 col-lg-4">
+                            <button class="btn btn-primary btn-sm" type="submit" id="btnSubmitItem" style="margin-right:5px">
+                                <i class="icon-ok bigger-110"></i>
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</div>

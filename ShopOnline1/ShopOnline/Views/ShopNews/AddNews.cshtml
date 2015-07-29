@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "AddNews";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@if (ViewData["hidNewsId"] != null)
+{
+    <div class="page-header">
+        <div class="pageTitle">Edit Shop News</div>
+    </div>
+}
+else
+{
+    <div class="page-header">
+        <div class="pageTitle">Add Shop News</div>
+    </div>
+}
+@*<link rel="stylesheet" href="http://cdn.jsdelivr.net/bootstrap/3.3.2/css/bootstrap.min.css">*@
+<script src="http://formValidation.io/vendor/formvalidation/js/formValidation.min.js"></script>
+<script src="http://formValidation.io/vendor/formvalidation/js/framework/bootstrap.min.js"></script>
+
+<script src="~/Scripts/SiteJs/ShopNewsValidation.js"></script>
+<script src="~/Content/AdminContents/js/ckeditor/ckeditor.js"></script>
+<script src="~/Scripts/SiteJs/ShopNews.js"></script>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        @Html.Partial("OperationMessage")
+        <div style="padding:20px">
+            <form id="frmaddnews" name="frmaddnews" action="~/ShopNews/AddNews" method="post">
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">News HeadLine<span style="color:Red;margin-left:3px">*</span></div>
+
+                    <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8">
+                        <input type="text" placeholder="News HeadLine" class="form-control" id="txtNewsHeadLine" name="txtNewsHeadLine" value="@ViewData["txtNewsHeadLine"]" maxlength="250" />
+                    </div>
+                </div>
+                <div class="linebr">&nbsp;</div>
+                <div class="linebr">&nbsp;</div>
+                <div class="form-group">
+                    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">News Detail<span style="color:Red;margin-left:3px">*</span></div>
+                    <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8">
+                        <textarea rows="8" class="ckeditor form-control" placeholder="News Detail" id="txtNewsDetail" name="txtNewsDetail" maxlength="450" required="required">@Html.Raw(ViewData["txtNewsDetail"])</textarea>
+                    </div>
+                </div>
+                <div class="linebr">&nbsp;</div>
+                @if (ViewData["hidNewsId"] != null)
+                {
+                    <input type="hidden" id="hidNewsId" name="hidNewsId" value="@ViewData["hidNewsId"]" />
+                }
+                <div class="linebr">&nbsp;</div>
+                @if (ViewData["hidNewsId"] != null)
+                {
+                    <div class="form-group">
+                        <label class="col-xs-2 col-sm-2 col-md-2 control-label no-padding-right blackLabel" for="form-field-1">&nbsp;</label>
+                        <div class="col-xs-10 col-sm-10 col-md-10">
+                            <button class="btn btn-primary btn-sm" type="submit" id="btnSubmitItem" style="margin-right:5px">
+                                <i class="icon-ok bigger-110"></i>
+                                Save
+                            </button>
+                            <button class="btn btn-info btn-sm" type="button" id="btnCancelEditNews">
+                                <i class="icon-reply align-top bigger-125"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="form-group">
+                        <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">&nbsp;</div>
+                        <div class="col-xs-6 col-sm-8 col-md-4 col-lg-4">
+                            <button class="btn btn-primary btn-sm" type="submit" id="btnSubmitItem">
+                                <i class="icon-ok bigger-110"></i>
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                }
+            </form>
+        </div>
+    </div>
+</div>
